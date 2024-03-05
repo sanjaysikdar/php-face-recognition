@@ -1,8 +1,23 @@
-import face_recognition
-import sys
+import face_recognition, sys
+from urllib.parse import urlparse
+import urllib.request
+
+
+
+def is_url(path):
+    """Check if the path is a URL."""
+    # return path.startswith(('http://', 'https://', 'ftp://'))
+    return urlparse(path).scheme != ''
+
 
 def authenticate_user(known_image_path, unknown_image_path):
     try:
+        if is_url(known_image_path):
+            known_image_path = urllib.request.urlopen(known_image_path)
+            
+        if is_url(unknown_image_path):
+            unknown_image_path = urllib.request.urlopen(unknown_image_path)
+            
         # Load known image and encode faces
         known_image = face_recognition.load_image_file(known_image_path)
         known_encoding = face_recognition.face_encodings(known_image)[0]

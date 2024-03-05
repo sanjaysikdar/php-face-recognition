@@ -4,8 +4,8 @@
 $start_time = microtime(true); 
 
 // MAIN CODE START
-$knownImage = "img/fake.jpg";
-$unknownImage = "img/fake (1).jpg";
+$knownImage = "img/fake.jpg";   # Place Image Link or Image Path
+$unknownImage = "img/fake (1).jpg"; # Place Image Link or Image Path
 
 // Use escapeshellarg to safely escape image paths
 $knownImage = escapeshellarg($knownImage);

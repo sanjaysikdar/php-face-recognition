@@ -28,6 +28,22 @@
      $unknownImage = "img/fake (2).jpg";
      ```
    - Replace `"img/real.jpg"` and `"img/fake (2).jpg"` with the actual paths to your known and unknown images.
+   - **OR** Replace with Image URL 
+    ```php
+     $knownImage = "https://picsum.photos/200/300";
+     $unknownImage = "https://picsum.photos/200/300";
+     ```
 
 3. **Save the Changes:**
    - Save the changes to the `face_compare.php` file and execute.
+
+
+#### Ouput Example:
+```bash
+OUTPUT: (True, 0.8908031769038957)
+
+User authenticated with confidence level: 89.08%
+-------------------------------------
+Script execution time: 2.23 seconds
+-------------------------------------
+```
